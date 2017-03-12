@@ -1,0 +1,50 @@
+package Lab1;
+
+public class Triangle {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public String Equilateral(int a, int b, int c){
+		String str = "NotEquilateral";
+		if( a==b && a!=0){
+			if(b==c){
+				str="Equilateral";
+			}
+		}
+		return str;
+	}
+	
+	public String Isosceles(int a, int b, int c){
+		String str = "NotIsosceles";
+		int temp = a-b;
+		int differ = Math.abs(temp);
+		//System.out.println("differ");
+		if(a+b>c && differ<c && a!=0 && b!=0 && c!=0){
+			if(a==b && a!=c){
+				str = "Isosceles";
+			}
+			else if(a==c && a!=b){
+				str = "Isosceles";
+			}
+			else if(b==c && b!=a){
+				str = "Isosceles";
+			}
+		}
+		return str;
+	}
+	
+	public String Scalene(int a, int b, int c){
+		String str = "NotScalene";
+		int temp = a-b;
+		int differ = Math.abs(temp);
+		if(a+b>c && differ<c && a!=0 && b!=0 && c!=0){
+			if(a!=b && b!=c && a!=c){
+				str = "Scalene";
+			}
+		}
+		return str;
+	}
+}
